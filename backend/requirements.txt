@@ -1,0 +1,6 @@
+flask
+flask-cors
+python-dotenv
+azure-storage-blob
+openai>=1.40.0
+requests
