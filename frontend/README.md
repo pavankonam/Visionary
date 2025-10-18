@@ -27,7 +27,7 @@ frontend/
 
 **Page 1: Login**
 - Email and password fields
-- Hardcoded credentials: `abdul.mazin@gmail.com` / `HauteCarat@2024!`
+- Hardcoded credentials
 - Clean, centered login form
 
 **Page 2: Category Selection**
@@ -52,8 +52,8 @@ Simply open `index.html` in your web browser:
 ### 2. Test the Flow
 
 **Step 1: Login**
-- Email: `abdul.mazin@gmail.com`
-- Password: `HauteCarat@2024!`
+- Email: ``
+- Password: ``
 
 **Step 2: Select Category**
 - Click on any jewelry category card
