@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HauteCarat - Luxury Jewelry Generation</title>
+    <link rel="stylesheet" href="static/css/hautecarat-style.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- PAGE 1: LOGIN PAGE -->
+    <!-- ============================================ -->
+    <div id="login-page" class="page active">
+        <div class="login-page">
+            <div class="login-container">
+                <h1 class="login-logo">HAUTECARAT</h1>
+
+                <div id="login-alert"></div>
+
+                <form id="login-form">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-input"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" id="login-btn">
+                        Sign In
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAGE 2: CATEGORY SELECTION PAGE -->
+    <!-- ============================================ -->
+    <div id="category-page" class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">HAUTECARAT</a>
+                <nav class="nav-links">
+                    <a href="#" class="nav-link" id="logout-btn-1">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container">
+            <h1 class="page-title">Select Jewelry Category</h1>
+
+            <div id="category-alert"></div>
+
+            <div class="category-grid">
+                <div class="category-card" data-category="Earrings">
+                    <div class="category-image">
+                        <img src="static/images/earrings.jpg" alt="Earrings">
+                    </div>
+                    <h3 class="category-title">Earrings</h3>
+                </div>
+
+                <div class="category-card" data-category="Rings">
+                    <div class="category-image">
+                        <img src="static/images/rings.jpg" alt="Rings">
+                    </div>
+                    <h3 class="category-title">Rings</h3>
+                </div>
+
+                <div class="category-card" data-category="Bracelet">
+                    <div class="category-image">
+                        <img src="static/images/bracelet.jpg" alt="Bracelet">
+                    </div>
+                    <h3 class="category-title">Bracelets</h3>
+                </div>
+
+                <div class="category-card" data-category="Necklace">
+                    <div class="category-image">
+                        <img src="static/images/necklace.jpg" alt="Necklace">
+                    </div>
+                    <h3 class="category-title">Necklaces</h3>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAGE 3: JEWELRY DETAILS PAGE -->
+    <!-- ============================================ -->
+    <div id="details-page" class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">HAUTECARAT</a>
+                <nav class="nav-links">
+                    <a href="#" class="nav-link" id="back-btn">Go Back</a>
+                    <a href="#" class="nav-link" id="logout-btn-2">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container">
+            <h1 class="page-title" id="category-title">Jewelry Details</h1>
+
+            <div id="details-alert"></div>
+
+            <!-- Jewelry Details Form -->
+            <section class="details-section">
+                <form id="jewelry-form">
+                    <!-- Input Fields -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="width">Jewelry Width (mm) *</label>
+                            <input
+                                type="number"
+                                id="width"
+                                name="width"
+                                class="form-input"
+                                placeholder="e.g., 2.5"
+                                step="0.1"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="fit_length">Fit / Length *</label>
+                            <input
+                                type="text"
+                                id="fit_length"
+                                name="fit_length"
+                                class="form-input"
+                                placeholder="e.g., Comfort Fit or 18 inches"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="metal_type">Metal Type *</label>
+                            <input
+                                type="text"
+                                id="metal_type"
+                                name="metal_type"
+                                class="form-input"
+                                placeholder="e.g., 18K Yellow Gold, Platinum"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div class="upload-area" id="upload-area">
+                        <input
+                            type="file"
+                            id="image-upload"
+                            accept=".jpg,.jpeg,.png"
+                            multiple
+                            style="display: none;"
+                        >
+                        <div class="upload-icon">📤</div>
+                        <p class="upload-text">
+                            <strong>Click to upload</strong> or drag and drop
+                        </p>
+                        <p class="upload-hint">JPG, JPEG or PNG (Min: 1, Max: 3 images)</p>
+                    </div>
+
+                    <!-- Image Previews -->
+                    <div class="preview-grid" id="preview-grid"></div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex-buttons">
+                        <button type="submit" class="btn btn-primary" id="generate-btn">
+                            Generate Jewelry
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section hidden" id="results-section">
+                <h2 class="results-title">Generated Results</h2>
+
+                <!-- Generated Image -->
+                <div class="result-image-container">
+                    <img id="generated-image" src="" alt="Generated Jewelry" class="result-image">
+                    <div class="flex-buttons mt-30">
+                        <button class="btn btn-primary" id="download-btn">
+                            Download Image
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Generated Description - Hidden as per requirement -->
+                <!-- <div class="result-description">
+                    <h3>Jewelry Description</h3>
+                    <p id="generated-description"></p>
+                </div> -->
+            </section>
+        </main>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- LOADING OVERLAY -->
+    <!-- ============================================ -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p class="loading-text">Generating your luxury jewelry...</p>
+            <p class="upload-hint" style="margin-top: 10px;">This may take a moment</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="static/js/hc-app.js"></script>
+</body>
+</html>
